@@ -15,23 +15,19 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+import sphinx_rtd_theme
 from recommonmark.parser import CommonMarkParser
-source_parsers = {
-    '.md': CommonMarkParser,
-}
-
 
 # -- Project information -----------------------------------------------------
 
-project = u'Test'
+project = u'Test_zly'
 copyright = u'2021, Liyu Zhang'
 author = u'Liyu Zhang'
 
 # The short X.Y version
 version = u''
 # The full version, including alpha/beta/rc tags
-release = u'v1'
+release = u''
 
 
 # -- General configuration ---------------------------------------------------
@@ -44,8 +40,13 @@ release = u'v1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'recommonmark',
-    'sphinx_markdown_tables'
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.coverage',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.viewcode',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -54,6 +55,10 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
+
+source_parsers = {
+    '.md':CommonMarkParser,
+}
 source_suffix = ['.rst', '.md']
 # source_suffix = '.rst'
 
@@ -81,9 +86,8 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-# html_theme = 'alabaster'
+#html_theme = 'alabaster'
 html_theme = 'sphinx_rtd_theme'
-
 
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -111,7 +115,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Testdoc'
+htmlhelp_basename = 'Test_zlydoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -138,7 +142,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Test.tex', u'Test Documentation',
+    (master_doc, 'Test_zly.tex', u'Test\\_zly Documentation',
      u'Liyu Zhang', 'manual'),
 ]
 
@@ -148,7 +152,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'test', u'Test Documentation',
+    (master_doc, 'test_zly', u'Test_zly Documentation',
      [author], 1)
 ]
 
@@ -159,8 +163,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'Test', u'Test Documentation',
-     author, 'Test', 'One line description of project.',
+    (master_doc, 'Test_zly', u'Test_zly Documentation',
+     author, 'Test_zly', 'One line description of project.',
      'Miscellaneous'),
 ]
 
@@ -181,3 +185,11 @@ epub_title = project
 
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
+
+
+# -- Extension configuration -------------------------------------------------
+
+# -- Options for intersphinx extension ---------------------------------------
+
+# Example configuration for intersphinx: refer to the Python standard library.
+intersphinx_mapping = {'https://docs.python.org/': None}
