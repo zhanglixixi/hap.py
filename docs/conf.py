@@ -16,7 +16,6 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import sphinx_rtd_theme
-import sphinx_markdown_tables
 from recommonmark.parser import CommonMarkParser
 
 # -- Project information -----------------------------------------------------
@@ -48,8 +47,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-    'recommonmark',
-    'sphinx_markdown_tables'
+    'recommonmark'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
